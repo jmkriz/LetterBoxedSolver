@@ -23,7 +23,6 @@ def calculate_word_list(letter_box):
     return found_words
 
 
-# This function assumes that the phrase passed to it is made of valid words
 def has_all_letters(letter_box, phrase):
     letter_counts = {}
     for side in letter_box:
@@ -33,7 +32,8 @@ def has_all_letters(letter_box, phrase):
             else:
                 letter_counts[letter] += 1
     for letter in phrase:
-        letter_counts[letter] -= 1
+        if letter in letter_counts:
+            letter_counts[letter] -= 1
     for letter in letter_counts:
         if letter_counts[letter] > 0:
             return False
