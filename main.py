@@ -1,7 +1,7 @@
 def calculate_solutions(letter_box):
     possible_words = calculate_word_list(letter_box)
     solutions = {1: [],
-                     2: []}
+                 2: []}
     for first_word in possible_words:
         if has_all_letters(letter_box, first_word):
             solutions[1].append(first_word)
